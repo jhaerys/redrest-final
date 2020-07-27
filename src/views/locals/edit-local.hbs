@@ -1,0 +1,83 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RedRest</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- css personalizado -->
+    <link href="../../css/sidebar.css" rel="stylesheet">
+
+    <!-- ionic icons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</head>
+
+<body class="bg-secondary">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- Sidebar -->
+            {{> navbar}}
+
+            <!-- administrar perfil -->
+            <div class="container">
+                <div class="row min-vh-100 d-flex align-content-center">
+
+                    <div class="col-sm-12 col-md-12 col-lg-3"></div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-6 pt-3 border bg-light rounded-lg shadow">
+                        <div class="px-sm-2 px-md-3 px-lg-4 w-100 text-center">
+                            <form class="form-group" action="/locals/edit/{{locals.id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
+                                <br><br>
+                                <h2 class="font-weight-bold">Editar Local</h2>
+                                <p class="text-secondary">Modifica los datos de tu local.</p>
+                                <br><br>
+                                <input class="form-control" name="nombreLocal" type="text"
+                                    value="{{modificar locals.nombreLocal}}">
+                                <br>
+                                <input class="form-control" name="ciudad" type="text"
+                                    value="{{modificar locals.ciudad}}">
+                                <br>
+                                <input class="form-control" name="direccion" type="text"
+                                    value="{{modificar locals.direccion}}">
+                                <br>
+                                <input class="form-control" name="descripcion" value="{{locals.descripcion}}"></input>
+                                <br><br>
+                                <button class="btn btn-danger rounded-pill" type="submit"
+                                    style="width: 120px;">Guardar</button>
+                                <button class="btn btn-outline-danger rounded-pill" type="back"
+                                    style="width: 120px;">cancelar</button>
+                                <br><br>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-12 col-lg-3"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- /Contenido de pagina -->
+
+    </div>
+
+    <script src="../../assets/jquery/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.js.map"></script>
+
+    <!-- Ocultar/Mostrar sidebar -->
+    <script src="../../assets/js/sidebar.js"></script>

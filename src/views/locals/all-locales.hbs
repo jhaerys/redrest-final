@@ -1,0 +1,60 @@
+<body class="bg-secondary">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- Sidebar -->
+            {{> navbar}}
+            {{> mensajes}}
+            {{> error}}
+
+            <!-- administrar perfil -->
+            <div class="container">
+                <div class="row min-vh-100 d-flex align-content-center">
+
+                    <div class="container-fluid border bg-light rounded-lg shadow m-2">
+                        <div class="row">
+
+                            {{> barra}}
+
+                            <div class=" col-sm-12 col-md-12 col-lg-8 py-3 mx-auto min-vh-100">
+                                <div>
+                                    <!-- tarjetas -->
+                                    <h5 class="pb-2">Lista de locales:</h5>
+                                    {{#each locals}}
+                                    <div class="card border shadow-sm mb-2 rounded w-100 ">
+                                        <div class="card-body bg-secondary ">
+                                            <h5 class="card-title ">{{modificar nombreLocal}} </h5>
+                                            <h6>Ciudad: <b>{{modificar ciudad}}</b> </h6>
+                                            <h6>Direccion: <b>{{modificar direccion}}</b> </h6>
+                                            <h6 class="card-text">Descripcion:<br><b>{{descripcion}}</b> </h6>
+                                            <a href="/locals/edit/{{_id}}" class="card-link text-danger ">Modificar</a>
+                                            <form class="texte-right" action="/locals/delete/{{_id}}?_method=DELETE"
+                                                method="POST">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                <button class="p-0 m-0 card-link text-danger border-0"
+                                                    type="submit">Eliminar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- /Contenido de pagina -->
+
+    </div>

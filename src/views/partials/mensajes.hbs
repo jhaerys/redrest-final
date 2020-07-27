@@ -1,0 +1,17 @@
+{{#if scs_msg}}
+<div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+    {{scs_msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
+    {{error_msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/if}}

@@ -1,0 +1,83 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RedRest | iniciar Sesion</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- css personalizado -->
+    <link href="../../css/sidebar.css" rel="stylesheet">
+
+    <!-- ionic icons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+</head>
+
+<body class="bg-secondary">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- Sidebar -->
+            {{> navbar}}
+            {{> mensajes}}
+            {{> error}}
+
+            <!-- administrar perfil -->
+            <div class="row d-flex min-vh-100 align-items-center">
+                <div class="col-lg-5 mx-auto">
+                    <div class="card m-1 shadow">
+                        <div class="card-header text-center">
+                            Modifica tu perfil.
+                        </div>
+                        <div class="card-body">
+                            <form class="form-group" action="/users/editProfile/{{user.id}}?_method=PUT" method="POST">
+                                <input type="hidden" name="_method" value="PUT">
+                                <input class="form-control" type="text" placeholder="Nombre..." name="nombre"
+                                    value="{{modificar user.nombre}}">
+                                <br>
+                                <input class="form-control" type="text" placeholder="Apellido..." name="apellido"
+                                    value="{{modificar user.apellido}}">
+                                <br>
+                                <input class="form-control" type="email" placeholder="Correo..." name="correo"
+                                    value="{{user.correo}}">
+                                <br>
+                                <input class="form-control" type="number" placeholder="Telefono..." name="telefono"
+                                    value="{{user.telefono}}">
+                                <br>
+                                <input class="form-control" type="password" placeholder="Contraseña..." name="pass">
+                                <br>
+                                <input class="form-control" type="password" placeholder="Repetir Contraseña..."
+                                    name="repass">
+                                <br><br>
+                                <div class="text-center">
+                                    <button class="btn btn-danger rounded-pill" type="submit"
+                                        style="width: 120px;">Actualizar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- /Contenido de pagina -->
+
+    </div>
+
+    <script src="../../assets/jquery/jquery.min.js"></script>
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.js.map"></script>
+
+    <!-- Ocultar/Mostrar sidebar -->
+    <script src="../../assets/js/sidebar.js"></script>

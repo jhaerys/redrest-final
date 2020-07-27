@@ -1,0 +1,60 @@
+<body
+    style="background-image: url('../img/registrarse2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- navbar -->
+            {{> navbar}}
+            {{> mensajes}}
+            {{> error}}
+
+            <div class="container-fluid">
+                <div class="row min-vh-100 d-flex align-content-center">
+
+                    <div class="col-sm-12 col-lg-3 col-xl-4"></div>
+
+                    <div class="col-sm-12 col-lg-3 col-xl-4"></div>
+
+                    <div class="col-sm-12 col-lg-6 col-xl-4">
+                        <div class="bg-white shadow-lg rounded px-5 px-lg-4 w-100 text-center">
+                            <form class="form-group" action="/users/signUp" method="POST">
+                                <br><br>
+                                <h2>Registrate</h2>
+                                <br>
+                                <p>Registrate en nuestra plataforma.</p>
+                                <br>
+                                <input class="form-control" type="text" name="nombre" value="{{nombre}}"
+                                    placeholder="Nombre...">
+                                <br>
+                                <input class="form-control" type="text" name="apellido" value="{{apellido}}"
+                                    placeholder="Apellido...">
+                                <br>
+                                <input class="form-control" type="email" name="correo" value="{{correo}}"
+                                    placeholder="Correo...">
+                                <br>
+                                <input class="form-control" type="text" name="telefono" value="{{telefono}}"
+                                    placeholder="Telefono...">
+                                <br>
+                                <input class="form-control" type="password" name="pass" placeholder="Contraseña...">
+                                <br>
+                                <input class="form-control" type="password" name="repass" placeholder="Contraseña...">
+                                <br><br>
+                                <button class="btn btn-danger rounded-pill text-white"
+                                    style="width: 150px;">Registrarse</button>
+                                <br><br><br>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /Contenido de pagina -->
+
+    </div>

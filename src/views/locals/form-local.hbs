@@ -1,0 +1,60 @@
+<body class="bg-secondary">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- Sidebar -->
+            {{> navbar}}
+
+            <!-- administrar perfil -->
+            <div class="container">
+                <div class="row min-vh-100 d-flex align-content-center">
+
+                    <div class="container-fluid border bg-light rounded-lg shadow m-2">
+                        <div class="row">
+
+                            {{> barra}}
+
+                            <div class="col-sm-12 col-md-12 col-lg-10 px-lg-5 pt-3">
+                                <div class="px-sm-2 px-md-3 px-lg-4 w-100 text-center">
+                                    <form class="form-group px-lg-5" action="/locals/form-local" method="POST">
+                                        <br><br>
+                                        <h2 class="font-weight-bold">Agrega Locales</h2>
+                                        <p class="text-secondary">Ingresa los datos de tu local.</p>
+                                        <br><br>
+                                        <input class="form-control" name="nombreLocal" type="text"
+                                            placeholder="Nombres Local...">
+                                        <br>
+                                        <input class="form-control" name="ciudad" type="text" placeholder="Ciudad...">
+                                        <br>
+                                        <input class="form-control" name="direccion" type="text"
+                                            placeholder="Direccion...">
+                                        <br>
+                                        <input class="form-control" name="descripcion"
+                                            placeholder="Descripcion..."></input>
+                                        <br><br>
+                                        <button class="btn btn-danger rounded-pill" type="submit"
+                                            style="width: 120px;">Agregar</button>
+                                        <a href="/users/profile" class="btn btn-outline-danger rounded-pill"
+                                            style="width: 120px;">Cancelar</a>
+                                        <br><br>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- /Contenido de pagina -->
+
+    </div>

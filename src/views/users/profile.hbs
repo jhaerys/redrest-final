@@ -1,0 +1,77 @@
+<body class="bg-secondary">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        {{> sidebar}}
+
+        <!-- Contenido de pagina -->
+        <div id="page-content-wrapper">
+
+            <!-- Sidebar -->
+            {{> navbar}}
+            {{> mensajes}}
+            {{> error}}
+
+            <!-- administrar perfil -->
+            <div class="container">
+                <div class="row min-vh-100 d-flex align-content-center">
+
+                    <div class="container-fluid border bg-light rounded-lg shadow m-2">
+                        <div class="row">
+
+                            {{> barra}}
+
+                            <div class="col-sm-12 col-md-12 col-lg-10">
+                                <div class="px-sm-2 px-md-3 px-lg-5 w-100">
+                                    <form class="form-group px-lg-5 mx-lg-5 ">
+                                        <br><br>
+                                        <h2 class="font-weight-bold text-center">Bienvenido</h2>
+                                        <h5 class="text-secondary text-center">{{modificar user.nombre}}
+                                            {{modificar user.apellido}}</h5>
+                                        <br><br>
+                                        <p>Nombre:</p>
+                                        <p class="form-control" type="text" placeholder="Nombres...">
+                                            {{modificar user.nombre}}
+                                        </p>
+                                        <p>Apellido:</p>
+                                        <p class="form-control" type="text" placeholder="Apellidos...">
+                                            {{modificar user.apellido}}</p>
+                                        <p>Correo:</p>
+                                        <p class="form-control" type="email" placeholder="Correo...">
+                                            {{user.correo}}
+                                        </p>
+                                        <p>Telefono:</p>
+                                        <p class="form-control" type="number" placeholder="Telefono...">
+                                            {{user.telefono}}
+                                        </p>
+                                        <br><br>
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <a href="/users/editProfile/{{user.id}}"
+                                                    class="btn btn-outline-danger rounded-pill"
+                                                    style="width: 110px;">Editar</a>
+                                                <a href="/locals/add" class="btn btn-danger rounded-pill"
+                                                    style="width: 110px;">+
+                                                    Local</a>
+                                                <a href="/products/add" class="btn btn-danger rounded-pill"
+                                                    style="width: 110px;">+
+                                                    Producto</a>
+                                                <br><br><br>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- /Contenido de pagina -->
+
+    </div>
